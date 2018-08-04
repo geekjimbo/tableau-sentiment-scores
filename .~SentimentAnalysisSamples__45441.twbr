@@ -97,7 +97,7 @@
       <column caption='Created At' datatype='datetime' name='[created_at]' role='dimension' type='ordinal' />
       <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
       <column caption='TweetText' datatype='string' name='[text]' role='dimension' type='nominal' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.517572' measure-ordering='alphabetic' measure-percentage='0.482428' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.382353' measure-ordering='alphabetic' measure-percentage='0.342561' parameter-percentage='0.275086' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
@@ -678,8 +678,8 @@
             <groupfilter function='member' level='[none:Calculation_3197626131597991939:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <filter class='quantitative' column='[federated.16kr4aw18khlnt1e0y40g16eyw6t].[none:sentiment_score:qk]' included-values='in-range'>
-            <min>-0.96889999999999998</min>
-            <max>0.99609999999999999</max>
+            <min>-0.96899999999999997</min>
+            <max>-0.52100000000000002</max>
           </filter>
           <slices>
             <column>[federated.16kr4aw18khlnt1e0y40g16eyw6t].[none:Calculation_3197626131597991939:nk]</column>
@@ -797,7 +797,7 @@
     </worksheet>
   </worksheets>
   <windows source-height='72'>
-    <window class='worksheet' name='ElonMuskSentimentAnalysis'>
+    <window class='worksheet' maximized='true' name='ElonMuskSentimentAnalysis'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -854,7 +854,7 @@
         </edge>
       </cards>
     </window>
-    <window class='worksheet' maximized='true' name='hotel_revs_with_sent_score'>
+    <window class='worksheet' name='hotel_revs_with_sent_score'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -879,6 +879,7 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
+            <card param='[federated.16kr4aw18khlnt1e0y40g16eyw6t].[none:sentiment_score:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
             <card pane-specification-id='0' param='[federated.16kr4aw18khlnt1e0y40g16eyw6t].[avg:sentiment_score:qk]' type='color' />
           </strip>
         </edge>

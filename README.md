@@ -1,4 +1,6 @@
 ## Tableau Sentiment Analysis Sample
+`By: Ing. Jimmy Figueroa`
+
 This sample contains sentiment scores of opinions/tweets for Elon Mush and Hotel recommendation systems.
 The `sentiment_scores` are calculated both from within Tableau Workbook, by leveraging Tableau to `TabPy` integration (a.k.a Python), and also from outside Tableau by leveraging `knime` workflows.
 
@@ -11,6 +13,19 @@ The `sentiment_scores` are calculated both from within Tableau Workbook, by leve
 # Elon Musk
 Idea is to have `tableau` calculate the scores for `elon musk tweets` text. 
 Open the `*.twb` tableau workbook and locate the calculated field called `sentiment_scores` to lookup the python code
+
+Sample code to calculate `sentiment_scores` for Elon Musk's tweets as follows:
+
+      SCRIPT_REAL("
+      from nltk.sentiment.vader import SentimentIntensityAnalyzer
+      sentences = _arg1
+      scores = []
+      analyzer = SentimentIntensityAnalyzer()
+      for sentence in sentences:
+          vs = analyzer.polarity_scores(sentence)
+              scores.append(vs['compound'])
+              return scores
+              ", ATTR([TweetText]))
 
 # Hotel Recommendations
 Idea is to `first` calculate the `sentiment_scores` from within `tableau`.
